@@ -15,6 +15,21 @@ function supportsWebGL() {
 
 if (canvas && supportsWebGL()) init();
 
+function roundedRect(w, h, r) {
+  const s = new THREE.Shape();
+  const x = -w / 2, y = -h / 2;
+  s.moveTo(x + r, y);
+  s.lineTo(x + w - r, y);
+  s.quadraticCurveTo(x + w, y, x + w, y + r);
+  s.lineTo(x + w, y + h - r);
+  s.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  s.lineTo(x + r, y + h);
+  s.quadraticCurveTo(x, y + h, x, y + h - r);
+  s.lineTo(x, y + r);
+  s.quadraticCurveTo(x, y, x + r, y);
+  return s;
+}
+
 function starShape() {
   const s = new THREE.Shape();
   const k = 0.13;
@@ -41,9 +56,9 @@ function init() {
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 
   scene.add(new THREE.AmbientLight(0xffffff, 0.3));
-  const violet = new THREE.PointLight(0x8b7dff, 60, 30);
-  violet.position.set(-4, 3, 5);
-  scene.add(violet);
+  const rim = new THREE.PointLight(0xd4d6dc, 60, 30);
+  rim.position.set(-4, 3, 5);
+  scene.add(rim);
   const white = new THREE.PointLight(0xffffff, 40, 30);
   white.position.set(4, -2, 6);
   scene.add(white);
@@ -58,7 +73,7 @@ function init() {
   const P = (x, y) => new THREE.Vector3((x - 634) * S, -(y - 611) * S, 0);
   const ribbon = new THREE.MeshPhysicalMaterial({
     color: 0xffffff, roughness: 0.22, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08,
-    sheen: 1, sheenRoughness: 0.4, sheenColor: new THREE.Color(0xb9b2ff),
+    sheen: 1, sheenRoughness: 0.4, sheenColor: new THREE.Color(0xffffff),
   });
 
   // Haste vertical (fica atrás do laço)
@@ -76,11 +91,24 @@ function init() {
   loop.position.z = 0.12;
   logo.add(loop);
 
+  // Quadrado de grafite em volta do "b", como um ícone de app
+  const tile = new THREE.Mesh(
+    new THREE.ExtrudeGeometry(roundedRect(4.4, 4.4, 1.05), {
+      depth: 0.5, bevelEnabled: true, bevelThickness: 0.16, bevelSize: 0.14, bevelSegments: 12, curveSegments: 40,
+    }).center(),
+    new THREE.MeshPhysicalMaterial({
+      color: 0x1c1c20, metalness: 0.35, roughness: 0.3, clearcoat: 1, clearcoatRoughness: 0.06,
+      envMapIntensity: 1.4,
+    }),
+  );
+  tile.position.z = -0.95;
+  logo.add(tile);
+
   // Achata levemente para parecer uma fita
   logo.scale.z = 0.6;
 
   // Estrelas cromadas
-  const chrome = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.95, roughness: 0.16, envMapIntensity: 2.6, emissive: 0x2a2440, emissiveIntensity: 0.4 });
+  const chrome = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.95, roughness: 0.16, envMapIntensity: 2.6, emissive: 0x222226, emissiveIntensity: 0.4 });
   const starGeo = new THREE.ExtrudeGeometry(starShape(), { depth: 0.12, bevelEnabled: true, bevelThickness: 0.06, bevelSize: 0.05, bevelSegments: 6, curveSegments: 24 });
   starGeo.center();
   const stars = [
@@ -99,7 +127,7 @@ function init() {
   const COUNT = 420;
   const pos = new Float32Array(COUNT * 3);
   const col = new Float32Array(COUNT * 3);
-  const c1 = new THREE.Color(0x8b7dff), c2 = new THREE.Color(0xffffff);
+  const c1 = new THREE.Color(0xd4d6dc), c2 = new THREE.Color(0xffffff);
   for (let i = 0; i < COUNT; i++) {
     const r = 3 + Math.random() * 6;
     const th = Math.random() * Math.PI * 2;
@@ -126,7 +154,7 @@ function init() {
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     const fit = Math.min(1, (w / h) / 0.9);
-    root.scale.setScalar(fit * 0.86);
+    root.scale.setScalar(fit * 0.74);
   };
   resize();
   window.addEventListener("resize", resize);

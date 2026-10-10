@@ -308,25 +308,6 @@
         scrollTrigger: { trigger: h, start: "top 88%" } });
   });
 
-  /* ---------- Editor explodido em camadas 3D ---------- */
-  const scene = document.querySelector(".ex-scene");
-  if (scene) {
-    const layers = gsap.utils.toArray(".ex-layer");
-    const tags = gsap.utils.toArray(".ex-tag");
-    const small = window.innerWidth < 700;
-    gsap.set(scene, { rotationX: 58, rotationZ: -30, scale: 0.78 });
-    const tl = gsap.timeline({
-      scrollTrigger: { trigger: ".exploded", start: "top top", end: small ? "+=1300" : "+=2400", scrub: 1, pin: true, anticipatePin: 1 },
-    });
-    tl.to(scene, { rotationX: 50, rotationZ: -24, scale: small ? 0.92 : 0.74, y: small ? 60 : 70, duration: 1, ease: "power2.inOut" }, 0)
-      .to(layers, { z: (i, el) => Number(el.dataset.z) * (small ? 0.35 : 1), duration: 1.1, ease: "power3.inOut", stagger: 0.04 }, 0)
-      .to(tags, { opacity: 1, duration: 0.35, stagger: 0.05 }, 0.7)
-      .to(scene, { rotationZ: -12, rotationX: 46, duration: 0.8, ease: "sine.inOut" })
-      .to(tags, { opacity: 0, duration: 0.3 })
-      .to(layers, { z: 0, duration: 1, ease: "power3.inOut" }, "<")
-      .to(scene, { rotationX: 0, rotationZ: 0, scale: 1, y: 0, duration: 1.1, ease: "power3.inOut" }, "<0.2");
-  }
-
   /* ---------- Cards de números voam em 3D ---------- */
   const statRot = window.innerWidth > 900 ? -14 : 0;
   gsap.fromTo(".stat",
