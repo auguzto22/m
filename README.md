@@ -13,12 +13,11 @@ python3 -m http.server 8000
 
 ## Estrutura
 
-- `index.html` — conteúdo e seções (hero, serviços, diferenciais, processo, sobre, FAQ, contato)
-- `styles.css` — estilos, tema escuro, responsividade e animações
-- `script.js` — menu mobile, animações ao rolar, contadores, raios no hero e validação do formulário
+- `index.html` — conteúdo e seções (início, o que fazemos, o app Cooler, próximos apps, sobre)
+- `styles.css` — estilos (tema gelo), responsividade e animações
+- `script.js` — menu mobile, animações ao rolar e flocos de gelo caindo no início
 - `assets/favicon.svg` — ícone do site
 
 ## Próximos passos
 
-- Conectar o formulário de contato a um serviço de envio (ex.: Formspree, um backend próprio ou e-mail)
 - Publicar gratuitamente com GitHub Pages, Netlify ou Vercel

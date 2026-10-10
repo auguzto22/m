@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blitz — Tecnologia na velocidade de um raio</title>
-  <meta name="description" content="Blitz é uma empresa de tecnologia que cria apps, sites, soluções de inteligência artificial e infraestrutura em nuvem com velocidade e qualidade." />
-  <meta name="theme-color" content="#07070c" />
-  <meta property="og:title" content="Blitz — Tecnologia na velocidade de um raio" />
-  <meta property="og:description" content="Apps, sites, IA e nuvem. Do zero ao lançamento, rápido." />
+  <title>Blitz — Criamos apps que facilitam o seu dia</title>
+  <meta name="description" content="A Blitz é uma empresa de tecnologia que cria seus próprios aplicativos. Conheça o Cooler, o jeito mais rápido de pedir gelo." />
+  <meta name="theme-color" content="#eaf6fd" />
+  <meta property="og:title" content="Blitz — Empresa de tecnologia" />
+  <meta property="og:description" content="Criamos apps que facilitam o seu dia. Conheça o Cooler." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,22 +25,20 @@
         <span>Blitz</span>
       </a>
       <nav class="nav__links" aria-label="Principal">
-        <a href="#servicos">Serviços</a>
-        <a href="#processo">Processo</a>
+        <a href="#o-que-fazemos">O que fazemos</a>
+        <a href="#cooler">Cooler</a>
         <a href="#sobre">Sobre</a>
-        <a href="#faq">FAQ</a>
       </nav>
-      <a href="#contato" class="btn btn--sm btn--primary nav__cta">Fale com a gente</a>
+      <a href="#cooler" class="btn btn--sm btn--primary nav__cta">Conheça o Cooler</a>
       <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
         <span></span><span></span>
       </button>
     </div>
     <div class="nav__mobile" id="menu-mobile" hidden>
-      <a href="#servicos">Serviços</a>
-      <a href="#processo">Processo</a>
+      <a href="#o-que-fazemos">O que fazemos</a>
+      <a href="#cooler">Cooler</a>
       <a href="#sobre">Sobre</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contato" class="btn btn--primary">Fale com a gente</a>
+      <a href="#cooler" class="btn btn--primary">Conheça o Cooler</a>
     </div>
   </header>
 
@@ -48,146 +46,136 @@
     <!-- HERO -->
     <section class="hero">
       <canvas class="hero__canvas" aria-hidden="true"></canvas>
-      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__frost" aria-hidden="true"></div>
       <div class="container hero__inner">
         <p class="eyebrow reveal"><span class="dot"></span> Empresa de tecnologia</p>
         <h1 class="hero__title reveal">
-          Tecnologia na<br />
-          <span class="gradient-text">velocidade de um raio.</span>
+          Criamos apps que<br />
+          <span class="gradient-text">facilitam o seu dia.</span>
         </h1>
         <p class="hero__lead reveal">
-          A Blitz transforma ideias em apps, sites e soluções com inteligência artificial —
-          do primeiro esboço ao lançamento, sem enrolação.
+          A Blitz é uma empresa de tecnologia. Nós pensamos, desenhamos e construímos
+          os nossos próprios aplicativos — simples, rápidos e feitos para resolver
+          coisas do dia a dia.
         </p>
         <div class="hero__actions reveal">
-          <a href="#contato" class="btn btn--primary btn--lg">
-            Começar um projeto
+          <a href="#cooler" class="btn btn--primary btn--lg">
+            Conheça o Cooler
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#servicos" class="btn btn--ghost btn--lg">Ver o que fazemos</a>
+          <a href="#o-que-fazemos" class="btn btn--ghost btn--lg">O que fazemos</a>
         </div>
 
-        <div class="hero__card reveal" aria-hidden="true">
-          <div class="term">
-            <div class="term__bar"><i></i><i></i><i></i><span>blitz deploy</span></div>
-            <pre class="term__body"><code><span class="c-mut">$</span> blitz deploy --prod
-<span class="c-ok">✓</span> build concluído        <span class="c-mut">1.2s</span>
-<span class="c-ok">✓</span> testes passaram        <span class="c-mut">342/342</span>
-<span class="c-ok">✓</span> publicado na nuvem     <span class="c-mut">global</span>
-<span class="c-acc">⚡ no ar em 4.8s</span><span class="caret"></span></code></pre>
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="cube cube--1"></div>
+          <div class="cube cube--2"></div>
+          <div class="cube cube--3"></div>
+          <div class="hero__badge">
+            <svg viewBox="0 0 32 32"><path d="M18.5 2 6 18h8.5L12 30l14-17h-8.8L18.5 2Z"/></svg>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAIXA -->
-    <section class="strip" aria-label="Tecnologias">
-      <div class="strip__track">
-        <div class="strip__group">
-          <span>iOS</span><span>Android</span><span>React</span><span>Flutter</span><span>Node.js</span><span>Python</span><span>IA Generativa</span><span>Cloud</span><span>APIs</span><span>Dados</span>
-        </div>
-        <div class="strip__group" aria-hidden="true">
-          <span>iOS</span><span>Android</span><span>React</span><span>Flutter</span><span>Node.js</span><span>Python</span><span>IA Generativa</span><span>Cloud</span><span>APIs</span><span>Dados</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVIÇOS -->
-    <section class="section" id="servicos">
+    <!-- O QUE FAZEMOS -->
+    <section class="section" id="o-que-fazemos">
       <div class="container">
         <header class="section__head reveal">
-          <p class="eyebrow">Serviços</p>
-          <h2>Tudo o que seu produto digital precisa.</h2>
-          <p class="section__sub">Um time completo de design, engenharia e dados trabalhando junto — para você lançar mais rápido e crescer com segurança.</p>
+          <p class="eyebrow">O que fazemos</p>
+          <h2>Nós fazemos apps.<br />Os nossos apps.</h2>
+          <p class="section__sub">Cada aplicativo da Blitz nasce de um problema real do dia a dia. A gente cria a ideia, desenvolve a tecnologia e cuida do app depois que ele chega no seu celular.</p>
         </header>
 
-        <div class="grid grid--services">
+        <div class="grid grid--3">
           <article class="card reveal">
             <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
-            <h3>Apps mobile</h3>
-            <p>Aplicativos nativos e multiplataforma para iOS e Android, rápidos, bonitos e prontos para escalar.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg></div>
-            <h3>Sites e plataformas</h3>
-            <p>Sites institucionais, e-commerce e sistemas web sob medida, com foco em performance e conversão.</p>
+            <h3>Apps próprios</h3>
+            <p>Desenvolvemos aplicativos para iOS e Android, com a nossa marca, do zero até a loja.</p>
           </article>
           <article class="card reveal">
             <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
-            <h3>Inteligência artificial</h3>
-            <p>Assistentes, automações e modelos de IA integrados ao seu negócio para economizar tempo de verdade.</p>
+            <h3>Tecnologia de verdade</h3>
+            <p>Usamos nuvem, dados e inteligência artificial para deixar cada app mais rápido e mais esperto.</p>
           </article>
           <article class="card reveal">
-            <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M7 18a5 5 0 1 1 .9-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8H7Z"/></svg></div>
-            <h3>Cloud e DevOps</h3>
-            <p>Infraestrutura na nuvem, deploy automatizado e monitoramento 24/7 para seu sistema nunca parar.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div>
-            <h3>Design UX/UI</h3>
-            <p>Interfaces claras e marcantes, desenhadas a partir de pesquisa com usuários reais.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></svg></div>
-            <h3>Dados e consultoria</h3>
-            <p>Dashboards, análise de dados e estratégia tecnológica para decisões mais rápidas e certeiras.</p>
+            <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></div>
+            <h3>Feito para as pessoas</h3>
+            <p>Telas simples, poucos toques e nada de complicação. Se não é fácil de usar, não sai daqui.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- DIFERENCIAIS -->
-    <section class="section section--alt">
-      <div class="container split">
-        <div class="reveal">
-          <p class="eyebrow">Por que a Blitz</p>
-          <h2>Rápido não significa malfeito.</h2>
-          <p class="section__sub">Nosso nome é uma promessa: velocidade. Mas cada entrega passa por testes, revisão de código e boas práticas de segurança antes de chegar até você.</p>
-          <ul class="checks">
-            <li>Entregas em ciclos curtos — você vê progresso toda semana</li>
-            <li>Comunicação direta com quem constrói o seu produto</li>
-            <li>Código limpo, documentado e 100% seu</li>
-            <li>Suporte e evolução contínua depois do lançamento</li>
-          </ul>
+    <!-- COOLER -->
+    <section class="section section--alt" id="cooler">
+      <div class="container product">
+        <div class="product__text reveal">
+          <p class="eyebrow">Nosso app</p>
+          <h2 class="product__name">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M4.9 6l14.2 12M19.1 6 4.9 18M9 3.5l3 2 3-2M9 20.5l3-2 3 2M3 9.5l3.2 1-1 3.2M21 9.5l-3.2 1 1 3.2"/></svg>
+            Cooler
+          </h2>
+          <p class="product__tagline">Gelo na sua porta, rapidinho.</p>
+          <p class="section__sub">O Cooler é o primeiro app da Blitz. Acabou o gelo da festa, do churrasco ou do bar? Peça pelo celular e receba gelo onde você estiver, sem sair de casa.</p>
+
+          <ol class="how">
+            <li><span>1</span><div><strong>Escolha</strong> o tipo e a quantidade de gelo.</div></li>
+            <li><span>2</span><div><strong>Peça</strong> em poucos toques e pague pelo app.</div></li>
+            <li><span>3</span><div><strong>Receba</strong> geladinho no seu endereço.</div></li>
+          </ol>
+
+          <div class="stores">
+            <span class="store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7a4.6 4.6 0 0 0-3.6-2c-1.5-.2-3 .9-3.7.9-.8 0-2-.9-3.3-.9a4.9 4.9 0 0 0-4.1 2.5c-1.8 3-.5 7.5 1.2 10 .8 1.2 1.8 2.6 3.1 2.5 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4a10 10 0 0 0 1.4-2.8 4.3 4.3 0 0 1-2.5-4.1ZM14 5.4A4.3 4.3 0 0 0 15 2.3a4.4 4.4 0 0 0-2.9 1.5 4.1 4.1 0 0 0-1 3 3.6 3.6 0 0 0 2.9-1.4Z"/></svg><span><small>Em breve na</small>App Store</span></span>
+            <span class="store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3 13.5 12l-9.9 9.7a1.2 1.2 0 0 1-.6-1V3.3c0-.4.2-.8.6-1Zm11 10.8 2.6 2.6-11.6 6.6 9-9.2Zm3.7-3.6 2.9 1.6c.9.5.9 1.7 0 2.2l-2.9 1.6-2.8-2.9 2.8-2.5ZM5.6 1.7l11.6 6.6-2.6 2.6-9-9.2Z"/></svg><span><small>Em breve no</small>Google Play</span></span>
+          </div>
         </div>
-        <div class="stats reveal">
-          <div class="stat"><strong data-count="2">0</strong><span>semanas por ciclo de entrega</span></div>
-          <div class="stat"><strong data-count="24" data-suffix="/7">0</strong><span>monitoramento dos sistemas</span></div>
-          <div class="stat"><strong data-count="100" data-suffix="%">0</strong><span>do código pertence a você</span></div>
-          <div class="stat"><strong data-count="1">0</strong><span>time dedicado do início ao fim</span></div>
+
+        <div class="phone reveal" aria-hidden="true">
+          <div class="phone__screen">
+            <div class="app__top">
+              <span class="app__hi">Olá! 👋</span>
+              <strong>Quanto gelo você precisa?</strong>
+            </div>
+            <div class="app__item app__item--active">
+              <div class="app__ice">🧊</div>
+              <div><strong>Gelo em cubos</strong><small>Saco de 5 kg</small></div>
+              <span class="app__qty">×2</span>
+            </div>
+            <div class="app__item">
+              <div class="app__ice">❄️</div>
+              <div><strong>Gelo triturado</strong><small>Saco de 5 kg</small></div>
+              <span class="app__qty">×0</span>
+            </div>
+            <div class="app__item">
+              <div class="app__ice">🧊</div>
+              <div><strong>Gelo em barra</strong><small>10 kg</small></div>
+              <span class="app__qty">×0</span>
+            </div>
+            <div class="app__eta">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              Entrega rápida no seu endereço
+            </div>
+            <div class="app__btn">Pedir gelo</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- PROCESSO -->
-    <section class="section" id="processo">
+    <!-- EM BREVE -->
+    <section class="section">
       <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Processo</p>
-          <h2>Da ideia ao lançamento em 4 passos.</h2>
-        </header>
-        <ol class="steps">
-          <li class="step reveal">
-            <span class="step__num">01</span>
-            <h3>Descoberta</h3>
-            <p>Entendemos seu negócio, seus usuários e o problema que precisa ser resolvido.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step__num">02</span>
-            <h3>Design</h3>
-            <p>Protótipos navegáveis para validar a experiência antes de escrever código.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step__num">03</span>
-            <h3>Construção</h3>
-            <p>Desenvolvimento em sprints, com entregas que você testa toda semana.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step__num">04</span>
-            <h3>Lançamento</h3>
-            <p>Publicamos, monitoramos e seguimos evoluindo o produto com você.</p>
-          </li>
-        </ol>
+        <div class="soon reveal">
+          <div>
+            <p class="eyebrow">Próximos apps</p>
+            <h2>O Cooler é só o começo.</h2>
+            <p class="section__sub">Já estamos trabalhando nos próximos aplicativos da Blitz. Mais ideias, mais tecnologia e mais coisas do dia a dia resolvidas pelo celular.</p>
+          </div>
+          <div class="soon__apps" aria-hidden="true">
+            <div class="soon__app soon__app--live"><svg viewBox="0 0 24 24"><path d="M12 2v20M4.9 6l14.2 12M19.1 6 4.9 18"/></svg><span>Cooler</span></div>
+            <div class="soon__app"><span class="soon__q">?</span><span>Em breve</span></div>
+            <div class="soon__app"><span class="soon__q">?</span><span>Em breve</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -199,87 +187,17 @@
         </div>
         <div>
           <p class="eyebrow">Sobre a Blitz</p>
-          <h2>Nascemos para acelerar ideias.</h2>
+          <h2>Tecnologia rápida como um raio.</h2>
           <p class="section__sub">
-            A Blitz é uma empresa de tecnologia feita por pessoas apaixonadas por criar.
-            Acreditamos que boas ideias não deveriam esperar meses para sair do papel —
-            por isso unimos design, engenharia e inteligência artificial para construir
-            produtos digitais com a energia de um raio.
+            "Blitz" quer dizer relâmpago. É assim que a gente quer que nossos apps sejam:
+            rápidos, diretos e prontos quando você precisa. Somos uma empresa de tecnologia
+            que acredita que um bom aplicativo pode deixar o dia de todo mundo mais fácil.
           </p>
           <div class="values">
-            <div><strong>Missão</strong><span>Tornar a tecnologia de ponta acessível e rápida para qualquer negócio.</span></div>
-            <div><strong>Visão</strong><span>Ser referência em inovação ágil no Brasil e no mundo.</span></div>
-            <div><strong>Valores</strong><span>Velocidade, transparência, qualidade e curiosidade.</span></div>
+            <div><strong>Missão</strong><span>Criar apps que resolvem problemas do dia a dia em poucos toques.</span></div>
+            <div><strong>Visão</strong><span>Ser uma das empresas de apps mais usadas do Brasil.</span></div>
+            <div><strong>Valores</strong><span>Velocidade, simplicidade, qualidade e cuidado com as pessoas.</span></div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="container container--narrow">
-        <header class="section__head reveal">
-          <p class="eyebrow">FAQ</p>
-          <h2>Perguntas frequentes</h2>
-        </header>
-        <div class="faq">
-          <details class="reveal">
-            <summary>Quanto tempo leva para criar um app?</summary>
-            <p>Depende do escopo, mas um primeiro produto (MVP) costuma ficar pronto entre 6 e 12 semanas. Você acompanha tudo com entregas semanais.</p>
-          </details>
-          <details class="reveal">
-            <summary>Quanto custa um projeto?</summary>
-            <p>Cada projeto é único. Depois de uma conversa rápida, enviamos uma proposta clara com prazo e valor fechados — sem surpresas.</p>
-          </details>
-          <details class="reveal">
-            <summary>Vocês dão suporte depois do lançamento?</summary>
-            <p>Sim. Oferecemos planos de manutenção, monitoramento e evolução contínua para o seu produto crescer junto com o seu negócio.</p>
-          </details>
-          <details class="reveal">
-            <summary>O código fica comigo?</summary>
-            <p>Sim, 100%. Todo o código, design e documentação pertencem a você ao final do projeto.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section class="section" id="contato">
-      <div class="container">
-        <div class="cta reveal">
-          <div class="cta__text">
-            <h2>Vamos tirar sua ideia do papel?</h2>
-            <p>Conte um pouco sobre o seu projeto. Respondemos rapidinho — afinal, somos a Blitz. ⚡</p>
-          </div>
-          <form class="form" id="form-contato" novalidate>
-            <div class="form__row">
-              <label>
-                <span>Nome</span>
-                <input type="text" name="nome" autocomplete="name" required placeholder="Seu nome" />
-              </label>
-              <label>
-                <span>E-mail</span>
-                <input type="email" name="email" autocomplete="email" required placeholder="voce@empresa.com" />
-              </label>
-            </div>
-            <label>
-              <span>O que você precisa?</span>
-              <select name="servico">
-                <option>App mobile</option>
-                <option>Site ou plataforma web</option>
-                <option>Inteligência artificial</option>
-                <option>Cloud e DevOps</option>
-                <option>Design UX/UI</option>
-                <option>Outro</option>
-              </select>
-            </label>
-            <label>
-              <span>Mensagem</span>
-              <textarea name="mensagem" rows="4" required placeholder="Fale um pouco sobre a sua ideia…"></textarea>
-            </label>
-            <button type="submit" class="btn btn--primary btn--lg btn--block">Enviar mensagem</button>
-            <p class="form__status" role="status" aria-live="polite"></p>
-          </form>
         </div>
       </div>
     </section>
@@ -292,10 +210,9 @@
         <span>Blitz</span>
       </a>
       <nav class="footer__links" aria-label="Rodapé">
-        <a href="#servicos">Serviços</a>
-        <a href="#processo">Processo</a>
+        <a href="#o-que-fazemos">O que fazemos</a>
+        <a href="#cooler">Cooler</a>
         <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
       </nav>
       <p class="footer__copy">© <span id="ano">2026</span> Blitz Tecnologia. Todos os direitos reservados.</p>
     </div>
