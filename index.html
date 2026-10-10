@@ -14,9 +14,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.documentElement.classList.add("js", "is-loading");
+    setTimeout(function () { document.documentElement.classList.remove("is-loading"); }, 4500);
+  </script>
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <img src="assets/logo.svg" alt="" class="loader__logo" />
+      <div class="loader__word"><span>B</span><span>l</span><span>i</span><span>t</span><span>z</span></div>
+    </div>
+    <div class="loader__foot"><span class="loader__count">0</span><div class="loader__bar"><b></b></div></div>
+  </div>
+  <div class="cursor" aria-hidden="true"><div class="cursor__ring"></div><div class="cursor__dot"></div></div>
   <div class="progress" aria-hidden="true"></div>
   <div class="cursor-glow" aria-hidden="true"></div>
 
@@ -90,6 +102,7 @@
         </div>
 
         <div class="hero__visual" aria-hidden="true">
+          <canvas class="hero__3d"></canvas>
           <div class="hero__icon parallax" data-depth="18">
             <img src="assets/logo.svg" alt="" />
             <div class="hero__reflect"><img src="assets/logo.svg" alt="" /></div>
@@ -112,6 +125,40 @@
           <div class="marquee__group" aria-hidden="true">
             <span>◆ Android</span><span>◆ Kotlin</span><span>◆ OpenGL ES</span><span>◆ Media3</span><span>◆ MediaCodec</span><span>◆ ML Kit</span><span>◆ IA Generativa</span><span>◆ GLSL Shaders</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITOR EXPLODIDO 3D -->
+    <section class="exploded" id="editor-3d" aria-label="O Recly Editor camada por camada">
+      <div class="exploded__head">
+        <span class="chip reveal">● Por dentro do editor</span>
+        <h2 class="heading reveal">Camada por camada,<br /><span class="chrome">em tempo real</span></h2>
+      </div>
+      <div class="ex-stage" aria-hidden="true">
+        <div class="ex-scene">
+          <div class="ex-layer ex-base" data-z="0">
+            <div class="ex-base__bar"><i></i><i></i><i></i><span>Recly Editor</span></div>
+            <span class="ex-tag">Janela do editor</span>
+          </div>
+          <div class="ex-layer ex-track ex-track--1" data-z="70"><b style="--x:0;--w:36%"></b><b style="--x:37%;--w:30%"></b><b style="--x:68%;--w:32%"></b><span class="ex-tag">Trilha de vídeo</span></div>
+          <div class="ex-layer ex-track ex-track--2" data-z="130"><b style="--x:14%;--w:22%"></b><b style="--x:54%;--w:26%"></b><span class="ex-tag">Efeitos na GPU</span></div>
+          <div class="ex-layer ex-track ex-track--3" data-z="190"><b style="--x:4%;--w:14%"></b><b style="--x:26%;--w:18%"></b><b style="--x:62%;--w:16%"></b><span class="ex-tag">Textos</span></div>
+          <div class="ex-layer ex-track ex-track--4" data-z="250"><b style="--x:0;--w:100%"></b><span class="ex-tag">Áudio</span></div>
+          <div class="ex-layer ex-preview" data-z="300">
+            <div class="ex-preview__scene"><i class="sc-orb"></i><i class="sc-hill sc-hill--a"></i><i class="sc-hill sc-hill--b"></i></div>
+            <span class="ex-tag">Prévia em tempo real</span>
+          </div>
+          <div class="ex-layer ex-panel" data-z="220">
+            <span>Exposição</span><b style="--w:62%"></b>
+            <span>Contraste</span><b style="--w:48%"></b>
+            <span>Saturação</span><b style="--w:74%"></b>
+            <span>Nitidez</span><b style="--w:36%"></b>
+            <span>Vinheta</span><b style="--w:28%"></b>
+            <span class="ex-tag">Correção de cor</span>
+          </div>
+          <div class="ex-layer ex-caption" data-z="420">Legenda automática com IA<span class="ex-tag">Legendas com IA</span></div>
+          <div class="ex-layer ex-head" data-z="360"><span class="ex-tag">Reprodução</span></div>
         </div>
       </div>
     </section>
@@ -341,6 +388,10 @@
     </div>
   </footer>
 
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
   <script src="script.js" defer></script>
+  <script type="module" src="three-scene.js"></script>
 </body>
 </html>
