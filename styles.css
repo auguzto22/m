@@ -456,3 +456,18 @@ html.js:not(.is-loading) .loader { clip-path: inset(0 0 100% 0); pointer-events:
   .cursor { display: none !important; }
   .marquee__viewport { transform: none; }
 }
+
+/* Marcadores com a logo (no lugar dos símbolos) */
+.chip { padding: 5px 12px 5px 5px; }
+.chip__mark { width: 20px; height: 20px; border-radius: 6px; }
+.chip:hover .chip__mark { animation: markSpin .8s var(--ease); }
+@keyframes markSpin { from { transform: rotate(-90deg) scale(.6); } }
+.marquee__group span { display: inline-flex; align-items: center; gap: 14px; }
+.mq-mark { width: 22px; height: 22px; opacity: .55; transition: opacity .3s, transform .6s var(--ease); }
+.marquee__group span:hover .mq-mark { opacity: 1; transform: rotate(-12deg) scale(1.15); }
+.ico-arrow, .play svg, .pill__arrow svg { width: 14px; height: 14px; }
+.ico-arrow, .pill__arrow svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.play svg { fill: currentColor; margin-left: 1px; }
+.btn__arrow { display: inline-grid; place-items: center; }
+.pill__arrow { display: inline-grid; place-items: center; transition: transform .4s var(--ease); }
+.pill:hover .pill__arrow { transform: translateX(3px); }

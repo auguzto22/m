@@ -226,7 +226,7 @@
     const total = 22;
     const run = () => {
       el.textContent = [...final].map((ch, i) => {
-        if (ch === " " || ch === "●") return ch;
+        if (ch === " ") return ch;
         return frame / total > i / final.length ? ch : glyphs[(Math.random() * glyphs.length) | 0];
       }).join("");
       if (++frame <= total) requestAnimationFrame(run);
@@ -241,7 +241,7 @@
       chipIO.unobserve(e.target);
     });
   }, { threshold: 1 });
-  document.querySelectorAll(".chip").forEach((c) => chipIO.observe(c));
+  document.querySelectorAll(".chip__text").forEach((c) => chipIO.observe(c));
 
   /* ---------- Cursor personalizado ---------- */
   const cursor = document.querySelector(".cursor");
