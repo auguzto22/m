@@ -15,21 +15,6 @@ function supportsWebGL() {
 
 if (canvas && supportsWebGL()) init();
 
-function roundedRect(w, h, r) {
-  const s = new THREE.Shape();
-  const x = -w / 2, y = -h / 2;
-  s.moveTo(x + r, y);
-  s.lineTo(x + w - r, y);
-  s.quadraticCurveTo(x + w, y, x + w, y + r);
-  s.lineTo(x + w, y + h - r);
-  s.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-  s.lineTo(x + r, y + h);
-  s.quadraticCurveTo(x, y + h, x, y + h - r);
-  s.lineTo(x, y + r);
-  s.quadraticCurveTo(x, y, x + r, y);
-  return s;
-}
-
 function starShape() {
   const s = new THREE.Shape();
   const k = 0.13;
@@ -68,36 +53,31 @@ function init() {
   const logo = new THREE.Group();
   root.add(logo);
 
-  // Ícone de vidro
-  const depth = 0.45, bevel = 0.14;
-  const boxGeo = new THREE.ExtrudeGeometry(roundedRect(3, 3, 0.78), {
-    depth, bevelEnabled: true, bevelThickness: bevel, bevelSize: 0.12, bevelSegments: 10, curveSegments: 32,
+  // Logo "b" em fita 3D (coordenadas medidas na imagem original da logo)
+  const S = 3.6 / 672;
+  const P = (x, y) => new THREE.Vector3((x - 634) * S, -(y - 611) * S, 0);
+  const ribbon = new THREE.MeshPhysicalMaterial({
+    color: 0xffffff, roughness: 0.22, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08,
+    sheen: 1, sheenRoughness: 0.4, sheenColor: new THREE.Color(0xb9b2ff),
   });
-  boxGeo.center();
-  const glass = new THREE.MeshPhysicalMaterial({
-    color: 0x5446f0, roughness: 0.1, metalness: 0, transmission: 0.35, thickness: 1.4, ior: 1.45,
-    clearcoat: 1, clearcoatRoughness: 0.04, iridescence: 0.5, iridescenceIOR: 1.3,
-    emissive: 0x2a1fb8, emissiveIntensity: 0.45,
-  });
-  logo.add(new THREE.Mesh(boxGeo, glass));
 
-  // Raio em fita (mesmas coordenadas do logo.svg, em escala)
-  const s = 3 / 448;
-  const front = depth / 2 + bevel;
-  const boltMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.18, metalness: 0.05, clearcoat: 1, clearcoatRoughness: 0.05 });
-  const backMat = new THREE.MeshPhysicalMaterial({ color: 0xd9d4ff, roughness: 0.25, transparent: true, opacity: 0.8, clearcoat: 1 });
-  const seg = (a, b, r, mat, z) => {
-    const ax = (a[0] - 256) * s, ay = -(a[1] - 256) * s;
-    const bx = (b[0] - 256) * s, by = -(b[1] - 256) * s;
-    const len = Math.hypot(bx - ax, by - ay);
-    const m = new THREE.Mesh(new THREE.CapsuleGeometry(r * s, len, 16, 32), mat);
-    m.position.set((ax + bx) / 2, (ay + by) / 2, z);
-    m.rotation.z = Math.atan2(by - ay, bx - ax) - Math.PI / 2;
-    logo.add(m);
-  };
-  seg([196, 268], [316, 244], 26, backMat, front + 0.05);
-  seg([304, 116], [196, 268], 29, boltMat, front + 0.16);
-  seg([316, 244], [208, 396], 29, boltMat, front + 0.16);
+  // Haste vertical (fica atrás do laço)
+  const top = P(527, 381), bottom = P(527, 660);
+  const stem = new THREE.Mesh(new THREE.CapsuleGeometry(62 * S, top.distanceTo(bottom), 24, 48), ribbon);
+  stem.position.set(top.x, (top.y + bottom.y) / 2, -0.12);
+  logo.add(stem);
+
+  // Laço arredondado (fica na frente)
+  const loopCurve = new THREE.CatmullRomCurve3([
+    P(470, 742), P(545, 640), P(652, 577), P(745, 632),
+    P(808, 706), P(722, 792), P(582, 866), P(500, 818),
+  ], true, "centripetal");
+  const loop = new THREE.Mesh(new THREE.TubeGeometry(loopCurve, 220, 40 * S, 32, true), ribbon);
+  loop.position.z = 0.12;
+  logo.add(loop);
+
+  // Achata levemente para parecer uma fita
+  logo.scale.z = 0.6;
 
   // Estrelas cromadas
   const chrome = new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.95, roughness: 0.16, envMapIntensity: 2.6, emissive: 0x2a2440, emissiveIntensity: 0.4 });
@@ -182,7 +162,8 @@ function init() {
     logo.rotation.x = motion * (my * 0.6 + Math.cos(t * 0.5) * 0.08) + sp * 0.6;
     logo.rotation.z = -0.08 + Math.sin(t * 0.4) * 0.04 * motion;
     logo.position.y = Math.sin(t * 1.1) * 0.12 * motion - sp * 1.2;
-    logo.scale.setScalar((0.4 + 0.6 * ease) * (1 - sp * 0.35));
+    const k = (0.4 + 0.6 * ease) * (1 - sp * 0.35);
+    logo.scale.set(k, k, k * 0.6);
 
     stars.forEach((o) => {
       const a = o.phase + t * o.speed * motion;

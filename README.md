@@ -16,10 +16,10 @@ python3 -m http.server 8000
 - `index.html` — conteúdo e seções (início, empresa, produtos, tecnologia, princípios, FAQ)
 - `styles.css` — tema escuro com texto cromado, vidro, roxo da marca e animações
 - `script.js` — loader, cursor, rolagem suave (Lenis), animações com GSAP ScrollTrigger (editor explodido em 3D, títulos, cards), FAQ e menu mobile
-- `three-scene.js` — cena 3D do topo com Three.js (logo de vidro, estrelas cromadas e partículas)
+- `three-scene.js` — cena 3D do topo com Three.js (logo "b" em fita 3D, estrelas cromadas e partículas)
 - `assets/vendor/` — bibliotecas incluídas no site: GSAP, ScrollTrigger, Lenis e Three.js
-- `assets/logo.svg` — logo da Blitz (ícone de vidro com raio); `assets/logo-preview.png` mostra o logo
-- `assets/favicon.svg` — ícone da aba do navegador
+- `assets/logo.png` — logo da Blitz (o "b" em fita, branco com fundo transparente)
+- `assets/logo-icon.png`, `assets/favicon.png`, `assets/apple-touch-icon.png` — logo em fundo preto para ícones
 
 ## Próximos passos
 
