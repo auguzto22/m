@@ -299,11 +299,12 @@
 
   /* ---------- Títulos surgem em 3D ---------- */
   document.querySelectorAll(".heading").forEach((h) => {
+    h.style.transition = "none";
     h.classList.remove("reveal");
     h.classList.add("split-ready");
     gsap.fromTo(h,
-      { clipPath: "inset(0% 0% 100% 0%)", y: 90, rotationX: -40, transformOrigin: "50% 100%" },
-      { clipPath: "inset(-20% -5% -20% -5%)", y: 0, rotationX: 0, duration: 1.5, ease: "expo.out",
+      { clipPath: "inset(0% 0% 100% 0%)", y: 90, rotationX: -40, opacity: 1, filter: "blur(0px)", transformOrigin: "50% 100%" },
+      { clipPath: "inset(-20% -5% -20% -5%)", y: 0, rotationX: 0, opacity: 1, duration: 1.5, ease: "expo.out",
         scrollTrigger: { trigger: h, start: "top 88%" } });
   });
 
@@ -315,10 +316,10 @@
     const small = window.innerWidth < 700;
     gsap.set(scene, { rotationX: 58, rotationZ: -30, scale: 0.78 });
     const tl = gsap.timeline({
-      scrollTrigger: { trigger: ".exploded", start: "top top", end: "+=2400", scrub: 1, pin: true, anticipatePin: 1 },
+      scrollTrigger: { trigger: ".exploded", start: "top top", end: small ? "+=1300" : "+=2400", scrub: 1, pin: true, anticipatePin: 1 },
     });
-    tl.to(scene, { rotationX: 50, rotationZ: -24, scale: small ? 0.9 : 0.74, y: small ? 120 : 70, duration: 1, ease: "power2.inOut" }, 0)
-      .to(layers, { z: (i, el) => Number(el.dataset.z) * (small ? 0.55 : 1), duration: 1.1, ease: "power3.inOut", stagger: 0.04 }, 0)
+    tl.to(scene, { rotationX: 50, rotationZ: -24, scale: small ? 0.92 : 0.74, y: small ? 60 : 70, duration: 1, ease: "power2.inOut" }, 0)
+      .to(layers, { z: (i, el) => Number(el.dataset.z) * (small ? 0.35 : 1), duration: 1.1, ease: "power3.inOut", stagger: 0.04 }, 0)
       .to(tags, { opacity: 1, duration: 0.35, stagger: 0.05 }, 0.7)
       .to(scene, { rotationZ: -12, rotationX: 46, duration: 0.8, ease: "sine.inOut" })
       .to(tags, { opacity: 0, duration: 0.3 })
@@ -344,11 +345,15 @@
 
   /* ---------- Bento: entrada escalonada em 3D ---------- */
   gsap.utils.toArray(".bento .tilt, .pillars .tilt, .principles .tilt").forEach((el) => {
+    // Sem transição CSS durante a entrada, e valores finais explícitos:
+    // assim o card nunca fica preso invisível.
+    el.style.transition = "none";
     el.classList.remove("reveal");
-    gsap.from(el, {
-      opacity: 0, y: 120, rotationX: 25, scale: 0.92, transformPerspective: 1200, duration: 1.4, ease: "expo.out",
-      clearProps: "transform", scrollTrigger: { trigger: el, start: "top 92%" },
-    });
+    gsap.fromTo(el,
+      { opacity: 0, y: 120, rotationX: 25, scale: 0.92, filter: "blur(0px)", transformPerspective: 1200 },
+      { opacity: 1, y: 0, rotationX: 0, scale: 1, duration: 1.4, ease: "expo.out",
+        clearProps: "transform,transition,filter",
+        scrollTrigger: { trigger: el, start: "top 92%" } });
   });
 
   /* ---------- Palavra gigante do rodapé ---------- */

@@ -478,7 +478,11 @@ html.js:not(.is-loading) .loader { clip-path: inset(0 0 100% 0); pointer-events:
 .ex-track > .ex-tag { left: auto; right: 100%; translate: -14px -50%; }
 .ex-track > .ex-tag::before { right: auto; left: 100%; }
 .ex-head > .ex-tag { top: -8%; translate: 14px 0; }
-@media (max-width: 700px) { .ex-tag { display: none; } }
+@media (max-width: 700px) {
+  .ex-tag { display: none; }
+  .exploded { display: flex; flex-direction: column; justify-content: center; padding: 80px 0 40px; }
+  .ex-stage { padding: 40px 0 0; }
+}
 
 /* Heading reveal (GSAP) */
 .heading.split-ready { perspective: 800px; }
