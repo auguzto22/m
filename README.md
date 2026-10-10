@@ -13,10 +13,11 @@ python3 -m http.server 8000
 
 ## Estrutura
 
-- `index.html` — conteúdo e seções (início, a empresa, produtos Recly Editor e Recly Gravador, tecnologia, princípios)
-- `styles.css` — estilos (tema claro azul-gelo), responsividade e animações
-- `script.js` — menu mobile e animações ao rolar
-- `assets/favicon.svg` — ícone do site
+- `index.html` — conteúdo e seções (início, empresa, produtos, tecnologia, princípios, FAQ)
+- `styles.css` — tema escuro com texto cromado, vidro, roxo da marca e animações
+- `script.js` — animações de rolagem, parallax, inclinação 3D, contadores, FAQ e menu mobile
+- `assets/logo.svg` — logo da Blitz (ícone de vidro com raio); `assets/logo-preview.png` mostra o logo
+- `assets/favicon.svg` — ícone da aba do navegador
 
 ## Próximos passos
 
