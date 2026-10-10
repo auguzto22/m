@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blitz — Criamos apps que facilitam o seu dia</title>
-  <meta name="description" content="A Blitz é uma empresa de tecnologia que cria seus próprios aplicativos. Conheça o Cooler, o jeito mais rápido de pedir gelo." />
-  <meta name="theme-color" content="#eaf6fd" />
-  <meta property="og:title" content="Blitz — Empresa de tecnologia" />
-  <meta property="og:description" content="Criamos apps que facilitam o seu dia. Conheça o Cooler." />
+  <title>Blitz — Tecnologia para criar com vídeo</title>
+  <meta name="description" content="A Blitz é uma empresa de tecnologia que desenvolve software de criação de vídeo: o editor de vídeo Recly Editor e o gravador de tela Recly." />
+  <meta name="theme-color" content="#f4f9fd" />
+  <meta property="og:title" content="Blitz" />
+  <meta property="og:description" content="Empresa de tecnologia dedicada a software de criação de vídeo." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,178 +25,241 @@
         <span>Blitz</span>
       </a>
       <nav class="nav__links" aria-label="Principal">
-        <a href="#o-que-fazemos">O que fazemos</a>
-        <a href="#cooler">Cooler</a>
-        <a href="#sobre">Sobre</a>
+        <a href="#empresa">A empresa</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#principios">Princípios</a>
       </nav>
-      <a href="#cooler" class="btn btn--sm btn--primary nav__cta">Conheça o Cooler</a>
       <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
         <span></span><span></span>
       </button>
     </div>
     <div class="nav__mobile" id="menu-mobile" hidden>
-      <a href="#o-que-fazemos">O que fazemos</a>
-      <a href="#cooler">Cooler</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#cooler" class="btn btn--primary">Conheça o Cooler</a>
+      <a href="#empresa">A empresa</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#tecnologia">Tecnologia</a>
+      <a href="#principios">Princípios</a>
     </div>
   </header>
 
   <main id="conteudo">
     <!-- HERO -->
     <section class="hero">
-      <canvas class="hero__canvas" aria-hidden="true"></canvas>
-      <div class="hero__frost" aria-hidden="true"></div>
+      <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__inner">
-        <p class="eyebrow reveal"><span class="dot"></span> Empresa de tecnologia</p>
-        <h1 class="hero__title reveal">
-          Criamos apps que<br />
-          <span class="gradient-text">facilitam o seu dia.</span>
-        </h1>
-        <p class="hero__lead reveal">
-          A Blitz é uma empresa de tecnologia. Nós pensamos, desenhamos e construímos
-          os nossos próprios aplicativos — simples, rápidos e feitos para resolver
-          coisas do dia a dia.
-        </p>
-        <div class="hero__actions reveal">
-          <a href="#cooler" class="btn btn--primary btn--lg">
-            Conheça o Cooler
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a href="#o-que-fazemos" class="btn btn--ghost btn--lg">O que fazemos</a>
+        <div class="hero__text">
+          <p class="eyebrow reveal">Blitz Tecnologia</p>
+          <h1 class="hero__title reveal">
+            Tecnologia para<br />
+            <span class="gradient-text">criar com vídeo.</span>
+          </h1>
+          <p class="hero__lead reveal">
+            A Blitz é uma empresa de tecnologia que desenvolve software de criação de vídeo.
+            Projetamos e construímos, do motor de renderização à interface, as ferramentas
+            que as pessoas usam para gravar, editar e contar suas histórias.
+          </p>
+          <div class="hero__actions reveal">
+            <a href="#produtos" class="btn btn--primary btn--lg">
+              Conheça nossos produtos
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#empresa" class="btn btn--ghost btn--lg">Sobre a Blitz</a>
+          </div>
         </div>
 
-        <div class="hero__visual reveal" aria-hidden="true">
-          <div class="cube cube--1"></div>
-          <div class="cube cube--2"></div>
-          <div class="cube cube--3"></div>
-          <div class="hero__badge">
-            <svg viewBox="0 0 32 32"><path d="M18.5 2 6 18h8.5L12 30l14-17h-8.8L18.5 2Z"/></svg>
+        <!-- Editor mockup -->
+        <div class="studio reveal" aria-hidden="true">
+          <div class="studio__bar"><i></i><i></i><i></i><span>Recly Editor</span></div>
+          <div class="studio__body">
+            <div class="studio__preview">
+              <div class="studio__frame">
+                <div class="studio__sun"></div>
+                <div class="studio__hill studio__hill--1"></div>
+                <div class="studio__hill studio__hill--2"></div>
+                <div class="studio__caption">Legenda automática</div>
+              </div>
+              <div class="studio__side">
+                <span>Cor</span><b style="--w:72%"></b>
+                <span>Exposição</span><b style="--w:48%"></b>
+                <span>Nitidez</span><b style="--w:60%"></b>
+                <span>Vinheta</span><b style="--w:30%"></b>
+              </div>
+            </div>
+            <div class="studio__timeline">
+              <div class="studio__ruler"></div>
+              <div class="studio__track"><span class="clip clip--v" style="--x:0%;--w:38%"></span><span class="clip clip--v" style="--x:39%;--w:34%"></span><span class="clip clip--v" style="--x:74%;--w:26%"></span></div>
+              <div class="studio__track"><span class="clip clip--t" style="--x:8%;--w:22%"></span><span class="clip clip--t" style="--x:44%;--w:18%"></span><span class="clip clip--t" style="--x:70%;--w:20%"></span></div>
+              <div class="studio__track"><span class="clip clip--a" style="--x:0%;--w:100%"></span></div>
+              <div class="studio__playhead"></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- O QUE FAZEMOS -->
-    <section class="section" id="o-que-fazemos">
+    <!-- EMPRESA -->
+    <section class="section" id="empresa">
+      <div class="container">
+        <div class="intro reveal">
+          <div>
+            <p class="eyebrow">A empresa</p>
+            <h2>Quem somos</h2>
+          </div>
+          <div>
+            <p class="lead">
+              A Blitz é uma empresa brasileira de tecnologia focada em software de mídia.
+              Nosso trabalho é transformar tecnologia complexa — codificação de vídeo em
+              hardware, renderização na GPU, reconhecimento de fala — em ferramentas que
+              qualquer pessoa consegue usar.
+            </p>
+            <p class="lead lead--muted">
+              Desenvolvemos nossos produtos de ponta a ponta: pesquisa, engenharia, design,
+              testes e evolução contínua. Cada linha de código é escrita com foco em
+              desempenho, estabilidade e respeito ao usuário.
+            </p>
+          </div>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar reveal"><strong>Missão</strong><p>Dar a todas as pessoas ferramentas profissionais para criar com vídeo.</p></div>
+          <div class="pillar reveal"><strong>Visão</strong><p>Ser referência mundial em software de criação de vídeo feito no Brasil.</p></div>
+          <div class="pillar reveal"><strong>Valores</strong><p>Engenharia rigorosa, privacidade, simplicidade e melhoria contínua.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="section section--alt" id="produtos">
       <div class="container">
         <header class="section__head reveal">
-          <p class="eyebrow">O que fazemos</p>
-          <h2>Nós fazemos apps.<br />Os nossos apps.</h2>
-          <p class="section__sub">Cada aplicativo da Blitz nasce de um problema real do dia a dia. A gente cria a ideia, desenvolve a tecnologia e cuida do app depois que ele chega no seu celular.</p>
+          <p class="eyebrow">Produtos</p>
+          <h2>Nossos produtos</h2>
+          <p class="section__sub">Uma família de ferramentas Recly que trabalham juntas: o que você grava segue direto para a edição.</p>
         </header>
 
-        <div class="grid grid--3">
-          <article class="card reveal">
-            <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
-            <h3>Apps próprios</h3>
-            <p>Desenvolvemos aplicativos para iOS e Android, com a nossa marca, do zero até a loja.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
-            <h3>Tecnologia de verdade</h3>
-            <p>Usamos nuvem, dados e inteligência artificial para deixar cada app mais rápido e mais esperto.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></div>
-            <h3>Feito para as pessoas</h3>
-            <p>Telas simples, poucos toques e nada de complicação. Se não é fácil de usar, não sai daqui.</p>
-          </article>
-        </div>
+        <!-- Editor -->
+        <article class="product reveal">
+          <div class="product__info">
+            <div class="product__badge">
+              <span class="product__icon product__icon--editor"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15h18M8 15v4M14 15v4"/><path d="m10 8 4 2.5-4 2.5Z" fill="currentColor"/></svg></span>
+              <span class="tag">Em desenvolvimento</span>
+            </div>
+            <h3 class="product__name">Recly Editor</h3>
+            <p class="product__desc">Editor de vídeo completo para Android, com linha do tempo de múltiplas trilhas e efeitos processados na GPU em tempo real.</p>
+            <ul class="features">
+              <li>Linha do tempo multitrilha de vídeo, áudio, textos e imagens</li>
+              <li>Keyframes de posição, zoom, rotação e opacidade</li>
+              <li>Correção de cor, curvas e LUTs</li>
+              <li>Efeitos na GPU, máscaras e chroma key</li>
+              <li>Legendas automáticas em português com IA</li>
+              <li>Reenquadramento automático para 9:16, 16:9, 1:1 e 4:5</li>
+            </ul>
+          </div>
+          <div class="product__visual product__visual--editor" aria-hidden="true">
+            <div class="mini-tl">
+              <div class="mini-tl__row"><span style="--x:2%;--w:30%"></span><span style="--x:34%;--w:40%"></span><span style="--x:76%;--w:22%"></span></div>
+              <div class="mini-tl__row mini-tl__row--fx"><span style="--x:20%;--w:24%"></span><span style="--x:58%;--w:30%"></span></div>
+              <div class="mini-tl__row mini-tl__row--txt"><span style="--x:6%;--w:16%"></span><span style="--x:30%;--w:20%"></span><span style="--x:60%;--w:14%"></span></div>
+              <div class="mini-tl__row mini-tl__row--aud"><span style="--x:0%;--w:100%"></span></div>
+              <i class="mini-tl__head"></i>
+            </div>
+            <div class="kf">
+              <span>Keyframes</span>
+              <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0 50 C 40 50, 60 10, 100 10 S 160 45, 200 20" /></svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- Gravador -->
+        <article class="product product--reverse reveal">
+          <div class="product__info">
+            <div class="product__badge">
+              <span class="product__icon product__icon--rec"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/><circle cx="12" cy="11" r="3" fill="currentColor"/></svg></span>
+              <span class="tag">Em desenvolvimento</span>
+            </div>
+            <h3 class="product__name">Recly — Gravador de tela</h3>
+            <p class="product__desc">Gravação de tela leve e de alta qualidade, com o recurso Replay para guardar os últimos momentos que acabaram de acontecer.</p>
+            <ul class="features">
+              <li>Codificação de vídeo em hardware, sem pesar no aparelho</li>
+              <li>Captura do áudio interno junto com a tela</li>
+              <li>Replay: salve os últimos segundos com um toque</li>
+              <li>Modos Economia e Qualidade, ajustados ao seu aparelho</li>
+              <li>Gravações abertas direto no Recly Editor</li>
+            </ul>
+          </div>
+          <div class="product__visual product__visual--rec" aria-hidden="true">
+            <div class="rec">
+              <div class="rec__top"><span class="rec__dot"></span> REC <em>00:12:48</em></div>
+              <div class="rec__wave">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="rec__buffer">
+                <span>Replay</span>
+                <div class="rec__bar"><b></b></div>
+                <small>últimos 30 s prontos para salvar</small>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- COOLER -->
-    <section class="section section--alt" id="cooler">
-      <div class="container product">
-        <div class="product__text reveal">
-          <p class="eyebrow">Nosso app</p>
-          <h2 class="product__name">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M4.9 6l14.2 12M19.1 6 4.9 18M9 3.5l3 2 3-2M9 20.5l3-2 3 2M3 9.5l3.2 1-1 3.2M21 9.5l-3.2 1 1 3.2"/></svg>
-            Cooler
-          </h2>
-          <p class="product__tagline">Gelo na sua porta, rapidinho.</p>
-          <p class="section__sub">O Cooler é o primeiro app da Blitz. Acabou o gelo da festa, do churrasco ou do bar? Peça pelo celular e receba gelo onde você estiver, sem sair de casa.</p>
-
-          <ol class="how">
-            <li><span>1</span><div><strong>Escolha</strong> o tipo e a quantidade de gelo.</div></li>
-            <li><span>2</span><div><strong>Peça</strong> em poucos toques e pague pelo app.</div></li>
-            <li><span>3</span><div><strong>Receba</strong> geladinho no seu endereço.</div></li>
-          </ol>
-
-          <div class="stores">
-            <span class="store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7a4.6 4.6 0 0 0-3.6-2c-1.5-.2-3 .9-3.7.9-.8 0-2-.9-3.3-.9a4.9 4.9 0 0 0-4.1 2.5c-1.8 3-.5 7.5 1.2 10 .8 1.2 1.8 2.6 3.1 2.5 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4a10 10 0 0 0 1.4-2.8 4.3 4.3 0 0 1-2.5-4.1ZM14 5.4A4.3 4.3 0 0 0 15 2.3a4.4 4.4 0 0 0-2.9 1.5 4.1 4.1 0 0 0-1 3 3.6 3.6 0 0 0 2.9-1.4Z"/></svg><span><small>Em breve na</small>App Store</span></span>
-            <span class="store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3 13.5 12l-9.9 9.7a1.2 1.2 0 0 1-.6-1V3.3c0-.4.2-.8.6-1Zm11 10.8 2.6 2.6-11.6 6.6 9-9.2Zm3.7-3.6 2.9 1.6c.9.5.9 1.7 0 2.2l-2.9 1.6-2.8-2.9 2.8-2.5ZM5.6 1.7l11.6 6.6-2.6 2.6-9-9.2Z"/></svg><span><small>Em breve no</small>Google Play</span></span>
-          </div>
-        </div>
-
-        <div class="phone reveal" aria-hidden="true">
-          <div class="phone__screen">
-            <div class="app__top">
-              <span class="app__hi">Olá! 👋</span>
-              <strong>Quanto gelo você precisa?</strong>
-            </div>
-            <div class="app__item app__item--active">
-              <div class="app__ice">🧊</div>
-              <div><strong>Gelo em cubos</strong><small>Saco de 5 kg</small></div>
-              <span class="app__qty">×2</span>
-            </div>
-            <div class="app__item">
-              <div class="app__ice">❄️</div>
-              <div><strong>Gelo triturado</strong><small>Saco de 5 kg</small></div>
-              <span class="app__qty">×0</span>
-            </div>
-            <div class="app__item">
-              <div class="app__ice">🧊</div>
-              <div><strong>Gelo em barra</strong><small>10 kg</small></div>
-              <span class="app__qty">×0</span>
-            </div>
-            <div class="app__eta">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              Entrega rápida no seu endereço
-            </div>
-            <div class="app__btn">Pedir gelo</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EM BREVE -->
-    <section class="section">
+    <!-- TECNOLOGIA -->
+    <section class="section" id="tecnologia">
       <div class="container">
-        <div class="soon reveal">
-          <div>
-            <p class="eyebrow">Próximos apps</p>
-            <h2>O Cooler é só o começo.</h2>
-            <p class="section__sub">Já estamos trabalhando nos próximos aplicativos da Blitz. Mais ideias, mais tecnologia e mais coisas do dia a dia resolvidas pelo celular.</p>
+        <header class="section__head reveal">
+          <p class="eyebrow">Tecnologia</p>
+          <h2>Engenharia própria, do motor à interface.</h2>
+          <p class="section__sub">Nossos produtos são construídos sobre uma base tecnológica desenvolvida pela própria Blitz.</p>
+        </header>
+        <div class="grid grid--4">
+          <div class="tech reveal">
+            <div class="tech__icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></div>
+            <h3>Renderização na GPU</h3>
+            <p>Efeitos, cor e composição processados em shaders, com prévia em tempo real.</p>
           </div>
-          <div class="soon__apps" aria-hidden="true">
-            <div class="soon__app soon__app--live"><svg viewBox="0 0 24 24"><path d="M12 2v20M4.9 6l14.2 12M19.1 6 4.9 18"/></svg><span>Cooler</span></div>
-            <div class="soon__app"><span class="soon__q">?</span><span>Em breve</span></div>
-            <div class="soon__app"><span class="soon__q">?</span><span>Em breve</span></div>
+          <div class="tech reveal">
+            <div class="tech__icon"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
+            <h3>Codificação em hardware</h3>
+            <p>Captura e exportação usando os codificadores do próprio aparelho.</p>
+          </div>
+          <div class="tech reveal">
+            <div class="tech__icon"><svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/></svg></div>
+            <h3>Fala e linguagem</h3>
+            <p>Transcrição, correção e tradução de legendas, com pesquisa dedicada ao português do Brasil.</p>
+          </div>
+          <div class="tech reveal">
+            <div class="tech__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/><path d="M2 2h4M2 2v4M22 2h-4M22 2v4"/></svg></div>
+            <h3>Visão computacional</h3>
+            <p>Detecção de rostos e poses no próprio aparelho para reenquadrar vídeos automaticamente.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SOBRE -->
-    <section class="section section--alt" id="sobre">
-      <div class="container about reveal">
-        <div class="about__bolt" aria-hidden="true">
-          <svg viewBox="0 0 32 32"><path d="M18.5 2 6 18h8.5L12 30l14-17h-8.8L18.5 2Z"/></svg>
-        </div>
-        <div>
-          <p class="eyebrow">Sobre a Blitz</p>
-          <h2>Tecnologia rápida como um raio.</h2>
-          <p class="section__sub">
-            "Blitz" quer dizer relâmpago. É assim que a gente quer que nossos apps sejam:
-            rápidos, diretos e prontos quando você precisa. Somos uma empresa de tecnologia
-            que acredita que um bom aplicativo pode deixar o dia de todo mundo mais fácil.
-          </p>
-          <div class="values">
-            <div><strong>Missão</strong><span>Criar apps que resolvem problemas do dia a dia em poucos toques.</span></div>
-            <div><strong>Visão</strong><span>Ser uma das empresas de apps mais usadas do Brasil.</span></div>
-            <div><strong>Valores</strong><span>Velocidade, simplicidade, qualidade e cuidado com as pessoas.</span></div>
+    <!-- PRINCÍPIOS -->
+    <section class="section section--alt" id="principios">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Princípios</p>
+          <h2>Como trabalhamos</h2>
+        </header>
+        <div class="principles">
+          <div class="principle reveal">
+            <span class="principle__n">01</span>
+            <div><h3>Privacidade em primeiro lugar</h3><p>Seus vídeos e projetos ficam no seu aparelho. O processamento local é sempre a nossa primeira escolha.</p></div>
+          </div>
+          <div class="principle reveal">
+            <span class="principle__n">02</span>
+            <div><h3>Desempenho como requisito</h3><p>Cada recurso é medido e testado para funcionar bem também em aparelhos mais antigos.</p></div>
+          </div>
+          <div class="principle reveal">
+            <span class="principle__n">03</span>
+            <div><h3>Transparência</h3><p>Nenhum botão promete o que o produto ainda não faz. Documentamos limites com honestidade.</p></div>
+          </div>
+          <div class="principle reveal">
+            <span class="principle__n">04</span>
+            <div><h3>Seu trabalho é seu</h3><p>Nada é perdido: salvamento automático, desfazer e refazer, e compatibilidade com projetos antigos.</p></div>
           </div>
         </div>
       </div>
@@ -204,16 +267,32 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <a href="#topo" class="logo" aria-label="Blitz — voltar ao topo">
-        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M18.5 2 6 18h8.5L12 30l14-17h-8.8L18.5 2Z"/></svg>
-        <span>Blitz</span>
-      </a>
-      <nav class="footer__links" aria-label="Rodapé">
-        <a href="#o-que-fazemos">O que fazemos</a>
-        <a href="#cooler">Cooler</a>
-        <a href="#sobre">Sobre</a>
-      </nav>
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#topo" class="logo" aria-label="Blitz — voltar ao topo">
+            <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M18.5 2 6 18h8.5L12 30l14-17h-8.8L18.5 2Z"/></svg>
+            <span>Blitz</span>
+          </a>
+          <p>Tecnologia para criar com vídeo.</p>
+        </div>
+        <div class="footer__cols">
+          <div>
+            <strong>Empresa</strong>
+            <a href="#empresa">Quem somos</a>
+            <a href="#principios">Princípios</a>
+          </div>
+          <div>
+            <strong>Produtos</strong>
+            <a href="#produtos">Recly Editor</a>
+            <a href="#produtos">Recly Gravador</a>
+          </div>
+          <div>
+            <strong>Tecnologia</strong>
+            <a href="#tecnologia">Plataforma</a>
+          </div>
+        </div>
+      </div>
       <p class="footer__copy">© <span id="ano">2026</span> Blitz Tecnologia. Todos os direitos reservados.</p>
     </div>
   </footer>
